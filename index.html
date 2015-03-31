@@ -4,9 +4,30 @@
 		<link rel="stylesheet" href="bower_components/FlipClock/compiled/flipclock.css">
 	</head>
 	<body>
-		<div class="your-clock"></div>
+		<div class="clock"></div>
 		
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/FlipClock/compiled/flipclock.js"></script>
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate  = new Date(2015, 6, 22);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
 	</body>
 </html>
