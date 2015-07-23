@@ -52,6 +52,21 @@
             <p>
             niente ansia!
             </p>
+            <p>
+               <h1> Do you think is over bitch???</h1>
+            </p>
+            <p>
+                <h2>GOT U REMEMBER U STILL GOT A DISCUSSION IN</h2>
+            </p>
+            <div class="clock-wrapper">
+                <div class="clock" id="disc"></div>
+            </div>
+            <p>
+            <h1>Last things before THE FUCKING DAY U'LL BE FUCKING FREE</h1>
+            </p>
+            <div class="clock-wrapper">
+                <div class="clock" id="proc"></div>
+            </div>
         </div>
 		
 		
@@ -67,23 +82,41 @@
 
 				// Set some date in the future. In this case, it's always Jan 1
 				var futureDateRiassunto  = new Date(2015, 6, 22,12,00);
+                var diffRiassunto = futureDateRiassunto.getTime() / 1000 - currentDate.getTime() / 1000;
+                // Instantiate a coutdown FlipClock
+                clock = $('#riassunto').FlipClock(diffRiassunto, {
+                    clockFace: 'DailyCounter',
+                    countdown: true
+                });
+
+
                 var futureDateFinal  = new Date(2015, 6, 24,12,00);
-
-
-				// Calculate the difference in seconds between the future and current date
-				var diffRiassunto = futureDateRiassunto.getTime() / 1000 - currentDate.getTime() / 1000;
                 var diffFinal = futureDateFinal.getTime() / 1000 - currentDate.getTime() / 1000;
-
-				// Instantiate a coutdown FlipClock
-				clock = $('#riassunto').FlipClock(diffRiassunto, {
-					clockFace: 'DailyCounter',
-					countdown: true
-				});
                 clock2 = $('#final').FlipClock(diffFinal, {
                     clockFace: 'DailyCounter',
                     countdown: true
                 });
-			});
+				// Calculate the difference in seconds between the future and current date
+
+
+                var discussione  = new Date(2015, 6, 28,9,00);
+                var diffDiscussione = discussione.getTime() / 1000 - currentDate.getTime() / 1000;
+                clock3 = $('#disc').FlipClock(diffDiscussione, {
+                    clockFace: 'DailyCounter',
+                    countdown: true
+                });
+
+
+                var proclamazione  = new Date(2015, 6, 31,9,00);
+                var diffProclamazione = proclamazione.getTime() / 1000 - currentDate.getTime() / 1000;
+                clock4 = $('#proc').FlipClock(diffProclamazione, {
+                    clockFace: 'DailyCounter',
+                    countdown: true
+                });
+
+
+
+            });
 		</script>
 	</body>
 </html>
